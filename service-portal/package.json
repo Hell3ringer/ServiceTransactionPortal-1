@@ -27,21 +27,18 @@
     "react-scripts": "4.0.2",
     "request": "^2.88.2",
     "styled-components": "^5.2.1",
-    "sweetalert2": "^10.15.6",
+    "sweetalert2": "^10.15.7",
     "web-vitals": "^1.1.0",
     "webpack-node-externals": "^2.5.2"
   },
- 
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"npm run start\" \"move.sh\""
+    "backend": "cd Registration_backend && npm start",
+    "dev": "concurrently \"npm run start\" \"npm run backend\""
   },
-  
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -68,5 +65,4 @@
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.6"
   }
- 
 }

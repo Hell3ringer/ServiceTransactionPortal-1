@@ -1,3 +1,3 @@
 cd service-portal
 
-npm start
+npm run dev

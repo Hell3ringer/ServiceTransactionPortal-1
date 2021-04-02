@@ -1,6 +1,6 @@
 import React from 'react'
 import './Listitem.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ListItems(props){
     const items=props.items;
@@ -11,10 +11,10 @@ function ListItems(props){
                  {item.text}
                 
                  <span>
-                 <FontAwesomeIcon className="Faicons"
+                 {/* <FontAwesomeIcon className="Faicons"
                   icon='trash'
                   onClick={()=> props.deleteItem(item.key)}
-                  />
+                  /> */}
                   <button onClick={()=> props.deleteItem(item.key)}>done</button>
              </span>
              
