@@ -1,6 +1,4 @@
- 
 const mongoose = require('mongoose')
-
 const loginTemplate = new mongoose.Schema({
     fullName:{
         type:String,
@@ -11,5 +9,4 @@ const loginTemplate = new mongoose.Schema({
         required:true
     }
 })
-
 module.exports = mongoose.model('loginseeker',loginTemplate)

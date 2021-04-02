@@ -14,15 +14,9 @@ const GridWrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(25px, auto);
 `; 
-
 const Hemlo =styled.div`
 align-text=center;
-
 `;
-
-
-
-
 export const ProfHistory = () => (
 
   <div>
@@ -31,19 +25,5 @@ export const ProfHistory = () => (
       <Sidebarprof />
  <h2>USER HISTORY professional</h2>
     <p>TRFDHHJD</p>
-     
- </Hemlo>
-    
-
-    </div>
-
-    
- 
-   
-
- 
-  
-  
-   
-  
-)
+     </Hemlo>
+    </div>)

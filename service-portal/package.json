@@ -12,8 +12,8 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "cra-template": "1.1.2",
-    "express": "^4.17.1",
     "helmet": "^4.4.1",
     "http": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
@@ -27,16 +27,21 @@
     "react-scripts": "4.0.2",
     "request": "^2.88.2",
     "styled-components": "^5.2.1",
-    "sweetalert2": "^10.15.5",
+    "sweetalert2": "^10.15.6",
     "web-vitals": "^1.1.0",
     "webpack-node-externals": "^2.5.2"
   },
+ 
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run start\" \"move.sh\""
   },
+  
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -58,5 +63,10 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+ 
 }

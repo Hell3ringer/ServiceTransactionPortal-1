@@ -1,12 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
 import Sidebarprof from './Sidebarprof';
 import NavigationBarprof from './NavigationBarprof';
-
-
 export const ProfAbout = () => (
 
   <div >

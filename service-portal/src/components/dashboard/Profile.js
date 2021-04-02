@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from './Sidebar';
-
 import NavigationBarprof from './NavigationBarprof';
 const GridWrapper = styled.div`
   display: grid;
@@ -21,9 +20,7 @@ margin-right: 6em;
 
 `;
 
-export const Profile = () => (
-
-  <Hemlo>
+export const Profile = () => (<Hemlo>
     <NavigationBarprof />
       <Sidebar />
      <h2>USER PROFILE</h2>

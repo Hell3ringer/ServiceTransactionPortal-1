@@ -1,0 +1,65 @@
+.background{
+    
+    
+    background: rgba(10, 9, 9, 0.411);
+    border: 0;
+    border-radius: 10px;
+    width: 35%;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    margin-top: 100px;
+   }
+
+    
+.container{
+    text-align: center;     
+    margin: 10%;  
+    
+    
+}
+.grey-text{   
+     
+    font-size: 150%;
+    margin: 5px;    
+    color: rgb(186, 194, 201); 
+}
+
+
+.form-control{
+    
+    margin-left: 5px;
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;    
+    background: rgba(255, 255, 255, 0.582);
+    
+}
+.dropdown{
+    margin : 5px;    
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.582);
+    
+    
+}
+
+.signup {
+    margin : 5px;    
+    border: 0;
+    width: 20%;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(29, 97, 175, 0.671);
+    font-size: 20px;
+    
+}
+.signup:hover{
+    background: rgba(0, 66, 128, 0.178);
+}
+
+.division{
+    flex-wrap: wrap;
+}
