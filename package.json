@@ -4,7 +4,9 @@
   "description": "Software Engineering Project (IS F341)",
   "main": "index.js",
   "scripts": {
-    "start": "bash move.sh",
+
+    "start": "cd service-portal && npm run dev",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
