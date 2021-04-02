@@ -33,14 +33,20 @@
     "web-vitals": "^1.1.0",
     "webpack-node-externals": "^2.5.2"
   },
+ 
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+
     "backend": "cd Registration_backend && npm start",
     "dev": "concurrently \"npm run start\" \"npm run backend\""
+
   },
+  
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -62,5 +68,10 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+ 
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 import Sidebarprof from './Sidebarprof';
 import NavigationBarprof from './NavigationBarprof';
 const GridWrapper = styled.div`
@@ -15,12 +13,8 @@ const GridWrapper = styled.div`
   grid-auto-rows: minmax(25px, auto);
 `;
 export const ProfHome = (props) => (
- 
-    <div>
+<div>
       <NavigationBarprof />
       <Sidebarprof />
     <h2>CURRENT POSTS OF PROFESSIONAL</h2>
-
-    </div>
-  
-)
+</div>)

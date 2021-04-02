@@ -10,8 +10,6 @@ function check_pass() {
         document.getElementById('confirm_password').value) {
         document.getElementById('message').style.color = 'green';
         document.getElementById('message').innerHTML = 'matching';
-       
-        
     } else {
         document.getElementById('message').style.color = 'red';
         document.getElementById('message').innerHTML = 'not matching';
@@ -69,11 +67,8 @@ class Registrationpagegiver extends Component {
                 phoneNo:Event.target.value
             })
         }
-        
-
         onSubmit(Event){
-            
-            if (document.getElementById('message').innerHTML == 'matching') {
+             if (document.getElementById('message').innerHTML == 'matching') {
             Event.preventDefault()
 
             const registered = {
@@ -81,10 +76,8 @@ class Registrationpagegiver extends Component {
                 email:document.getElementById('email').value,
                 phoneNo:document.getElementById('phoneNo').value,
                 gender:document.getElementById('gender').value,
-                
-                password:document.getElementById('password').value,
-                
-            }
+                 password:document.getElementById('password').value,
+                }
             if (registered.fullName == ''|| registered.email == ''|| registered.phoneNo == ''|| registered.gender == ''|| registered.password == '') {
                     isEmpty = true;
                 }
@@ -127,12 +120,9 @@ class Registrationpagegiver extends Component {
                 phoneNo:'',
                 gender:'',                
                 password:'',
-                
-            })
+                 })
         }}
-
-
-    render(){
+ render(){
     return (
     <header className='background'>
         
@@ -161,18 +151,14 @@ class Registrationpagegiver extends Component {
                 </label>
                 &nbsp;&nbsp;
                 <select name="gender" id="gender" className="dropdown" placeholder='gender'>
-                    
-                    <option value="male" placeholder='gender'>male</option>
+                      <option value="male" placeholder='gender'>male</option>
                     <option value="female">female</option>
                     <option value="other">other</option>
                     
                 </select>                    
                     
                 <br />
-
-               
-
-                <label htmlFor="defaultExperience" className="grey-text">
+ <label htmlFor="defaultExperience" className="grey-text">
                     Password :
                         
                 </label>
@@ -185,10 +171,7 @@ class Registrationpagegiver extends Component {
                 <input type="password" name="confirm_password" id="confirm_password" onChange={check_pass} className="form-control" placeholder='same as password'/>
                 <span id='message'></span>
                 <br />
-
-
-
-                <Route render={({ history }) => (
+ <Route render={({ history }) => (
                     <button value = 'Submit' className='signup' value='Submit' onClick={this.onSubmit}>
                         signup
                     </button>

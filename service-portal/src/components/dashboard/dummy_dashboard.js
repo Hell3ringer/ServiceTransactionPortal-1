@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
-
-
-
 class dashboard extends Component {
-
-    openNav() {
+ openNav() {
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";       
     }
-    
-    
     closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";}
     Logout(){
         document.cookie="jwt="+ ";" + "max-age=" + (0);
     }
-    
     render() {
         return (
             <div>        
@@ -27,16 +20,14 @@ class dashboard extends Component {
                     <a href="#contact">Contact</a>
                     <a href="#about">About</a>
                     </div>       
-                
-                    <div id="mySidebar" className="sidebar">
+                   <div id="mySidebar" className="sidebar">
                         <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
                         <a href="#">About</a>
                         <a href="#">Services</a>
                         <a href="#">Clients</a>
                         <a href="#">Contact</a>
                         </div>
-
-                        <div id="main">
+                         <div id="main">
                         <button className="openbtn" onClick={this.openNav}>&#9776;</button>
                             <form>
                                 <p>
@@ -47,10 +38,7 @@ class dashboard extends Component {
                                 </p>
                             </form>
                         </div>
-
-                   
-            
-            </div>
+              </div>
         )
     }
 }

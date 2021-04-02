@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import './Home.css';
 import ListItems from './Listitems';
@@ -7,7 +6,6 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from './Sidebar';
 import NavigationBar  from './NavigationBar';
 library.add(faTrash);
-
 export class Home extends Component {
   constructor(props){
     super(props);
@@ -82,6 +80,28 @@ export class Home extends Component {
         <Sidebar />
         <header>
        <form id='to-do-form' onSubmit={this.addItem}>
+       <label htmlFor="location" className='location'>
+                    Location :
+                </label>
+                &nbsp;&nbsp;
+                <select name="location" id="location" className="dropdown" placeholder='location' onChange={this.changeGender} value={this.state.location}>
+                    
+                    <option value="Hyderabad" placeholder='location'>Hyderabad</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Chennai">Chennai</option>
+                    
+                </select>
+                <label htmlFor="profession" className='profession'>
+                    Profession :
+                </label>
+                &nbsp;&nbsp;
+                <select name="profession" id="profession" className="dropdown" placeholder='profession' onChange={this.changeGender} value={this.state.gender}>
+                    
+                    <option value="Carpenter" placeholder='profession'>Carpenter</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="other">other</option>
+                    
+                </select>
          <input type="text" placeholder="Enter Text"
          value={this.state.currentItem.text}
          onChange={this.handleInput}/>

@@ -15,7 +15,12 @@ function ListItems(props){
                   icon='trash'
                   onClick={()=> props.deleteItem(item.key)}
                   />
+                  <button onClick={()=> props.deleteItem(item.key)}>done</button>
              </span>
+             
+                 
+             
+             
              </p>
              
 

@@ -3,13 +3,11 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 import "./OS.css";
-
 function OccupationSearch() {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [filteredCountries, setFilteredCountries] = useState([]);
-
   useEffect(() => {
     setLoading(true);
     axios
@@ -49,14 +47,11 @@ function OccupationSearch() {
     </div>
   );
 }
-
 const CountryDetail = (props) => {
   const { occupation, fullName, phoneNo } = props;
-
-  return (
+return (
     <>
-          
-          <div className='ml-5 mt-3'>
+      <div className='ml-5 mt-3'>
             <Card style={{ width: '14rem' }}>
               <Card.Body>
                 <Card.Title style={{color: 'black' }}>{fullName}</Card.Title>
@@ -70,10 +65,6 @@ const CountryDetail = (props) => {
     </>
   );
 };
-
-
-
-
 const rootElement = document.getElementById("root");
 ReactDOM.render(<OccupationSearch />, rootElement);
 export default OccupationSearch;

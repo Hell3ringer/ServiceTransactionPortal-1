@@ -7,21 +7,17 @@ import RegPagegiver from './components/registration/Registrationpagegiver.js'
 import Loginpageopt from './components/registration/Loginoption'
 import Error from './components/Error'
 import Login from './components/registration/Login.js'
-import dashboard from './components/dashboard/dummy_dashboard.js'
 import {ProtectedRouteCustomer,ProtectedRouteProfessional} from './ProtectedRoute/ProtectedRoute'
 
 
 //dashboard
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { NavigationBar } from './components/dashboard/NavigationBar';
+
 import  Home  from './components/dashboard/Home.js';
 import { History } from './components/dashboard/History';
 import { Profile } from './components/dashboard/Profile';
-import Sidebar from './components/dashboard/Sidebar';
 import  Search  from './components/dashboard/Search';
 import {About} from './components/dashboard/About';
-import { NavigationBarprof } from './components/dashboard/NavigationBarprof';
-import  Sidebarprof from './components/dashboard/Sidebarprof';
 import { ProfAbout } from './components/dashboard/ProfAbout';
 import { ProfHome } from './components/dashboard/ProfHome';
 import { ProfHistory} from './components/dashboard/ProfHistory';

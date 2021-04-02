@@ -1,13 +1,9 @@
 .Home{
     background-color: #3f3160;
-   
     width:800 px;
     margin: 40px auto;
     min-height:500px;
-  
-    
-
-}
+    }
 #to-do-form input{
     background-color: rgb(27,112,137);
     border:0;

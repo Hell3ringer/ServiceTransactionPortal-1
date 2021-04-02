@@ -1,10 +1,12 @@
 .list{
-    color: azure;
-    width: 300px;
-    background-color: #bf07ac ;
-    height: 50px;
-    margin : 20px auto;
+    color: black;
+    width: match-parent;
+    background-color: #f1eff1 ;
+    height: 100px;
+    margin : 50px auto;
     border-radius: 5px;
+    overflow-wrap: break-word;
+    
 
 }
 

@@ -12,7 +12,6 @@ const GridWrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(25px, auto);
 `; 
-
 const Hemlo =styled.div`
 margin-top: 1em;
 margin-left: 6em;
