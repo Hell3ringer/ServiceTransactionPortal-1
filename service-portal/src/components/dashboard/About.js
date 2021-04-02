@@ -7,5 +7,8 @@ export const About = () => (
     <NavigationBar />
       <Sidebar />
     <h2>ABOUT THIS WEBSITE</h2>
-  </div>
- )
+
+ </div>
+
+)
+

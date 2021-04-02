@@ -11,6 +11,8 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "concurrent": "^0.3.2",
+    "concurrently": "^6.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cra-template": "1.1.2",
@@ -36,8 +38,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+
     "backend": "cd Registration_backend && npm start",
     "dev": "concurrently \"npm run start\" \"npm run backend\""
+
   },
   "eslintConfig": {
     "extends": [
