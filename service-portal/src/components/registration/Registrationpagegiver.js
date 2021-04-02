@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import '/ServiceTransactionPortal/service-portal/src/components/stylesheets/Registrationpageseeker.css'
+import '../stylesheets/Registrationpageseeker.css'
 import { Route } from 'react-router-dom'
 import axios from 'axios'
+const Swal = require('sweetalert2')
+var isEmpty = false;
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -24,18 +26,17 @@ class Registrationpagegiver extends Component {
             fullName:'',
             email:'',
             phoneNo:'',
-            gender:'',
-            occupation:'',
+            gender:'',            
             password:'',
-            experience:''
+            
         }
-        this.changeFullName = this.changeFullName.bind(this)
+        this.changeFullName = this.changeFullName.bind(this).non
         this.changeEmail = this.changeEmail.bind(this)
         this.changeGender = this.changeGender.bind(this)
-        this.changeOccupation = this.changeOccupation.bind(this)
+        
         this.changePassword = this.changePassword.bind(this)
         this.changePhoneNo = this.changePhoneNo.bind(this)
-        this.changeExperience = this.changeExperience.bind(this)
+        
         this.onSubmit=this.onSubmit.bind(this)
     }
 
@@ -57,11 +58,7 @@ class Registrationpagegiver extends Component {
                 gender:Event.target.value
             })
         }
-        changeOccupation(Event){
-            this.setState({
-                occupation:Event.target.value
-            })
-        }
+        
         changePassword(Event){
             this.setState({
                 password:Event.target.value
@@ -72,11 +69,7 @@ class Registrationpagegiver extends Component {
                 phoneNo:Event.target.value
             })
         }
-        changeExperience(Event){
-            this.setState({
-                experience:Event.target.value
-            })
-        }
+        
 
         onSubmit(Event){
             
@@ -88,22 +81,53 @@ class Registrationpagegiver extends Component {
                 email:document.getElementById('email').value,
                 phoneNo:document.getElementById('phoneNo').value,
                 gender:document.getElementById('gender').value,
-                occupation:document.getElementById('occupation').value,
+                
                 password:document.getElementById('password').value,
-                experience:document.getElementById('experience').value
+                
             }
-
-            axios.post('http://localhost:4000/app/signupCustomer',registered)
-            .then(Response => console.log(Response.data))
+            if (registered.fullName == ''|| registered.email == ''|| registered.phoneNo == ''|| registered.gender == ''|| registered.password == '') {
+                    isEmpty = true;
+                }
+                console.log(isEmpty);
+            if (isEmpty) {
+                Swal.fire({
+                    title: 'error',
+                    text: "Don't leave empty!!",
+                    icon: 'error',
+                    confirmButtonText: 'retry'
+                  }).then((result) =>{
+                      if (result.isConfirmed) {
+                          window.location.replace('/regpagegiver')
+                      }
+                  }
+                  )
+            } else {             
+                
+                axios.post('http://localhost:4000/app/signupCustomer',registered)
+                .then(Response => {
+                    if (Response.status == 200) {
+                        Swal.fire({
+                            title: 'success',
+                            text: "success",
+                            icon: 'success',
+                            confirmButtonText: 'ok'
+                        }).then((result) =>{
+                            if (result.isConfirmed) {
+                                window.location.replace('/loginCustomer')
+                            }
+                        }
+                        )
+                    }
+                })
+        }
 
             this.setState({
                 fullName:'',
                 email:'',
                 phoneNo:'',
-                gender:'',
-                occupation:'',
+                gender:'',                
                 password:'',
-                experience:''
+                
             })
         }}
 
@@ -117,19 +141,19 @@ class Registrationpagegiver extends Component {
                 <label htmlFor="defaultFormContactNameEx" className="grey-text">
                     Your name :
                 </label>
-                <input type="text" id="defaultFormContactNameEx" className="form-control" placeholder='full name'/>
+                <input type="text" id="fullName" className="form-control" placeholder='full name'/>
                 <br />
                 <label htmlFor="defaultFormContactEmailEx" className="grey-text">
                     Your email :
                 </label>
-                <input type="email" id="defaultFormContactEmailEx" className="form-control" placeholder='(eg: rahul@gmail.com)'/>
+                <input type="email" id="email" className="form-control" placeholder='(eg: rahul@gmail.com)'/>
                 <br />
 
 
                 <label htmlFor="phone no" className='grey-text'> 
                     Phone no :
                 </label>                        
-                <input type="tel"  pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' />
+                <input id = "phoneNo" type="tel"  pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' />
                 <br />
 
                 <label htmlFor="gender" className='grey-text'>

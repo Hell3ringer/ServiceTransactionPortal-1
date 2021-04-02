@@ -3,14 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
+    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "cra-template": "1.1.2",
-    "express": "^4.17.1",
     "helmet": "^4.4.1",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
     "mdbreact": "^5.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
@@ -19,8 +25,12 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
+    "request": "^2.88.2",
     "styled-components": "^5.2.1",
-    "web-vitals": "^1.1.0"
+    "sweetalert2": "^10.15.6",
+    "web-vitals": "^1.1.0",
+    "webpack-node-externals": "^2.5.2"
+
   },
   "scripts": {
     "start": "react-scripts start",

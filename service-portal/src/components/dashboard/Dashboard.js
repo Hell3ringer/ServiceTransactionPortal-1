@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Dashboard() {
     const [sidebar, setSidebar] = useState(false);

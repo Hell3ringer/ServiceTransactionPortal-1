@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 
 const StyledSideNav = styled.div`   

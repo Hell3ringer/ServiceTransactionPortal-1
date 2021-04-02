@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Styles = styled.div`
   .navbar { background-color: #222; position : fixed; top:0; right:0; left:0; }
@@ -22,6 +23,9 @@ const Styles = styled.div`
 
 
 export class NavigationBarprof extends Component {
+  Logout(){
+    document.cookie="jwt="+ ";" + "max-age=" + (0);
+}
   render() {
     return (
       <div>
@@ -37,6 +41,7 @@ export class NavigationBarprof extends Component {
           <Nav.Item><Nav.Link href="/ProfHome">Home</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/ProfAbout">About</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href="/ProfProfile">My Profile</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/" onClick={this.Logout}>Logout</Nav.Link></Nav.Item>
           {/* <Nav.Item><Nav.Link href="/history">History</Nav.Link></Nav.Item> */}
           
         </Nav>

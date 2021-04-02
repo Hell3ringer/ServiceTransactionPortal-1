@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "/ServiceTransactionPortal/service-portal/src/components/stylesheets/Registrationpageseeker.css"
+import '../stylesheets/Registrationpageseeker.css'
 import { Route } from 'react-router-dom'
 import axios from 'axios'
-
+const Swal = require('sweetalert2')
+var isEmpty = false;
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -28,6 +29,7 @@ class Registrationpageseeker extends Component {
             phoneNo:'',
             gender:'',
             occupation:'',
+            location:'',
             password:'',
             experience:''
         }
@@ -35,11 +37,13 @@ class Registrationpageseeker extends Component {
         this.changeEmail = this.changeEmail.bind(this)
         this.changeGender = this.changeGender.bind(this)
         this.changeOccupation = this.changeOccupation.bind(this)
+        this.changeLocation= this.changeLocation.bind(this)
         this.changePassword = this.changePassword.bind(this)
         this.changePhoneNo = this.changePhoneNo.bind(this)
         this.changeExperience = this.changeExperience.bind(this)
         this.onSubmit=this.onSubmit.bind(this)
     }
+    
 
     
         changeFullName(props){
@@ -62,6 +66,11 @@ class Registrationpageseeker extends Component {
         changeOccupation(Event){
             this.setState({
                 occupation:Event.target.value
+            })
+        }
+        changeLocation(Event){
+            this.setState({
+                location:Event.target.value
             })
         }
         changePassword(Event){
@@ -91,12 +100,44 @@ class Registrationpageseeker extends Component {
                 phoneNo:document.getElementById('phoneNo').value,
                 gender:document.getElementById('gender').value,
                 occupation:document.getElementById('occupation').value,
+                location:document.getElementById('location').value,
                 password:document.getElementById('password').value,
                 experience:document.getElementById('experience').value
             }
-
-            axios.post('http://localhost:4000/app/signupProfessional',registered)
-            .then(Response => console.log(Response.data))
+            if (registered.fullName == ''|| registered.email == ''|| registered.phoneNo == ''|| registered.gender == ''|| registered.occupation == ''|| registered.location == ''|| registered.password == ''|| registered.experience == '') {
+                 isEmpty = true;
+                 
+            }
+            console.log(isEmpty);
+            console.log(registered.fullName + registered.email + registered.phoneNo + registered.gender + registered.occupation + registered.location + registered.password + registered.experience );
+            if (isEmpty) {
+                Swal.fire({
+                    title: 'error',
+                    text: "Don't leave empty!!",
+                    icon: 'error',
+                    confirmButtonText: 'retry'
+                  }).then((result) =>{
+                      if (result.isConfirmed) {
+                          window.location.replace('/regpageseeker')
+                      }})
+            }else{            
+                axios.post('http://localhost:4000/app/signupProfessional',registered)
+                .then(Response => {
+                    if (Response.status == 200) {
+                        Swal.fire({
+                            title: 'success',
+                            text: "success",
+                            icon: 'success',
+                            confirmButtonText: 'ok'
+                        }).then((result) =>{
+                            if (result.isConfirmed) {
+                                window.location.replace('/loginProfessional')
+                            }
+                        }
+                        )
+                    }
+                })
+        }
 
             this.setState({
                 fullName:'',
@@ -104,6 +145,7 @@ class Registrationpageseeker extends Component {
                 phoneNo:'',
                 gender:'',
                 occupation:'',
+                location:'',
                 password:'',
                 experience:''
             })
@@ -160,6 +202,15 @@ class Registrationpageseeker extends Component {
                 </select>
                 <br />
                
+                <label for="location" className='grey-text'>Location :</label>
+                <select name="location" id="location" className="dropdown" onChange={this.changeLocation} value={this.state.location}>
+                    <option value="mumbai">mumbai</option>
+                    <option value="hyderabad">hyderabad</option>
+                    <option value="delhi">delhi</option>
+                    <option value="other">other</option>
+
+                </select>
+                <br />
 
                 <label htmlFor="defaultExperience" className="grey-text">
                     Password :

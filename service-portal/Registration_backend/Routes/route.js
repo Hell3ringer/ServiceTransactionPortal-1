@@ -3,13 +3,17 @@ const express = require('express')
 const router = express.Router()
 const signupTemplatecopy = require('../models/Signup_model')
 const signupTemplatecopy2 = require('../models/Signup_model_customer')
-const alert = require('alert')
-
+const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const { response } = require('express')
+const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv')
 
 
-
+/*router.get('/cookie' , (req,res) => {
+    res.setHeader('Set-Cookie','newUser=true')
+    res.send('got the cookies')
+})*/
 router.get('/signupProfessional',async (req,res) => {
     
     let loginemail = req.query.loginEmail.toString()
@@ -23,6 +27,7 @@ router.get('/signupProfessional',async (req,res) => {
         }else{
             if (!user) {
                 console.log("user dosent exist!!");
+                res.send('-2')
             }else(bcrypt.compare(loginpassword,user.password,(error,response) => {
                 if (error) {
                     console.log(error);
@@ -30,8 +35,20 @@ router.get('/signupProfessional',async (req,res) => {
                 }else{
                     if (response) {
                         console.log('login successfull');
+                        var id = user._id
+                        var type = "professional"                     
+                        var a={
+                            id : id,
+                            type : "professional"
+                        }        
+                        var token = jwt.sign({id:id,type:"professional"},process.env.PRIVATE_KEY_JWT,{expiresIn:24*60*60})             
+                        res.send(token);                       
+                        
                     }else{
+                        
                         console.log("wrong password!!");
+                        res.send('-1')
+                        
                         
                     }
                 
@@ -58,6 +75,7 @@ router.get('/signupCustomer',async (req,res) => {
         }else{
             if (!user) {
                 console.log("user dosent exist!!");
+                res.send('-2')
             }else(bcrypt.compare(loginpassword,user.password,(error,response) => {
                 if (error) {
                     console.log(error);
@@ -65,8 +83,17 @@ router.get('/signupCustomer',async (req,res) => {
                 }else{
                     if (response) {
                         console.log('login successfull');
+                        var id = user._id
+                        var type = "customer"                      
+                        var a={
+                            id : id,
+                            type : "customer"
+                        }        
+                        var token = jwt.sign({id:id,type:"customer"},process.env.PRIVATE_KEY_JWT,{expiresIn:24*60*60})             
+                        res.send(token); 
                     }else{
                         console.log('wrong password!!');
+                        res.send('-1')
                     }
                 
             }})) 
@@ -91,15 +118,19 @@ router.post('/signupProfessional',async (request,response) => {
         phoneNo:request.body.phoneNo,
         gender:request.body.gender,
         occupation:request.body.occupation,
+        location:request.body.location,
         password:securedPassword,
         experience:request.body.experience,
     })
     signedupUser.save()
     .then(data => {
-        response.json(data)
+        return response.status(200).json(data)
+       // response.send('ok')
     })
     .catch(error => {
-        response.json(error)
+        
+        return response.status(404).json(error)
+        
     })
 })
 router.post('/signupCustomer',async (request,response) => {
@@ -118,10 +149,12 @@ router.post('/signupCustomer',async (request,response) => {
     })
     signedupUser.save()
     .then(data => {
-        response.json(data)
+        return response.status(200).json(data)
+        //return response.send('ok')
     })
     .catch(error => {
-        response.json(error)
+        return response.status(404).json(error)
+        
     })
 })
 

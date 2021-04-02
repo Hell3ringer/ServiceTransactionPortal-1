@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import Sidebarprof from './Sidebarprof';
+import NavigationBarprof from './NavigationBarprof';
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 200px;
@@ -12,6 +17,8 @@ const GridWrapper = styled.div`
 export const ProfHome = (props) => (
  
     <div>
+      <NavigationBarprof />
+      <Sidebarprof />
     <h2>CURRENT POSTS OF PROFESSIONAL</h2>
 
     </div>

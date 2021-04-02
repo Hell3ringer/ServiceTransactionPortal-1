@@ -1,4 +1,4 @@
-GET    http://localhost:4000/app/signupCustomer
+POST   http://localhost:4000/app/signupCustomer
 Content-Type: application/json
 
 
@@ -12,4 +12,5 @@ Content-Type: application/json
      "experience":"none"
 
  }
+
 

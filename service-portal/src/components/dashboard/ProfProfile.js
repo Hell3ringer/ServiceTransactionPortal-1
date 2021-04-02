@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import Sidebarprof from './Sidebarprof';
+import NavigationBarprof from './NavigationBarprof';
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 10px;
@@ -20,8 +25,10 @@ margin-right: 6em;
 export const ProfProfile = () => (
 
   <Hemlo>
+    <NavigationBarprof />
+      <Sidebarprof />
      <h2>USER PROFILE professional</h2>
-    <p>TRFDHHJDSAFGAG</p>
+    <p>professional profile</p>
   </Hemlo>
 
 )

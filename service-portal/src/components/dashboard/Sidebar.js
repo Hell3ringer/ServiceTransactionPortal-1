@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 
 const StyledSideNav = styled.div`   
     position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
-    left:5px;
-    top:78px;
     height: 100%;
     width: 75px;     /* Set the width of the sidebar */
     z-index: 1;      /* Stay on top of everything */
@@ -13,6 +12,7 @@ const StyledSideNav = styled.div`
     background-color: #222; /* Black */
     overflow-x: hidden;     /* Disable horizontal scroll */
     padding-top: 10px;
+    margin-left:0px;
 `;
 
 class SideNav extends React.Component {
@@ -22,25 +22,30 @@ class SideNav extends React.Component {
             activePath: props.location.pathname,
             items: [
                 {
-                  path: '/Home', /* path is used as id to check which NavItem is active basically */
+                  path: '/', /* path is used as id to check which NavItem is active basically */
                   name: 'Home',
                   css: 'fa fa-fw fa-home',
                   key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
                 },
                 {
-                    path: '/Search',
+                    path: '/mysearch',
                     name: 'Search',
                     css: 'fa fa-fw fa-search',
-                    key: 3
+                    key: 4
                   },
                 {
-                  path: '/History',
+                  path: '/history',
                   name: 'History',
                   css: 'fa fa-fw fa-clock',
                   key: 2
                 },
                 
-               
+                {
+                  path: '/NoMatch',
+                  name: 'NoMatch',
+                  css: 'fas fa-hashtag',
+                  key: 3
+                },
               ]
         }
     }
@@ -79,7 +84,6 @@ const StyledNavItem = styled.div`
     width: 75px; /* width must be same size as NavBar to center */
     text-align: center; /* Aligns <a> inside of NavIcon div */
     margin-bottom: 0;   /* Puts space between NavItems */
-    color: ${(props) => props.active ? "#00ffff" : "white"};
     a {
         font-size: 2.7em;
         color: ${(props) => props.active ? "#00ffff" : "white"};
