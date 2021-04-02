@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+.Search ::placeholder {
+  font-family: cursive;
+}
+
+.Search{
+  margin-top: 100px;
+  align-self: center;
+  margin-left: 630px;
+}

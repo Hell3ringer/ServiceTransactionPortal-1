@@ -1,6 +1,4 @@
- 
 const mongoose = require('mongoose')
-
 const signupTemplate = new mongoose.Schema({
     fullName:{
         type:String,
@@ -23,7 +21,5 @@ const signupTemplate = new mongoose.Schema({
         type:String,
         required:true
     }
-    
 })
-
 module.exports = mongoose.model('customers',signupTemplate)

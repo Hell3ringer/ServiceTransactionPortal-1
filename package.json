@@ -4,8 +4,8 @@
   "description": "Software Engineering Project (IS F341)",
   "main": "index.js",
   "scripts": {
+    "start": "bash move.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/NikhilKumarOllala/ServiceTransactionPortal#readme",
   "dependencies": {
-    "mdbreact": "^5.0.1"
-  },
-  "devDependencies": {}
+    "heroku": "^7.51.0",
+    "mdbreact": "^5.0.1",
+    "sweetalert2": "^10.15.7"
+  }
 }

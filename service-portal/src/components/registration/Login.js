@@ -1,23 +1,12 @@
-
 import axios from 'axios'
-//import { response } from 'express'
 import React, { Component } from 'react'
 import {Link,Redirect,Route} from 'react-router-dom'
-
 import '../stylesheets/Login.css'
-
 const Swal = require('sweetalert2')
 const cookieParser = require('cookie-parser')
-
-
-
 class Login extends Component {   
-    
-
     sign(){      
-         
-        
-        axios.get('http://localhost:4000/app/signupProfessional',{
+         axios.get('http://localhost:4000/app/signupProfessional',{
             params :{
                 loginEmail:document.getElementById('email').value,
                 loginPassword:document.getElementById('password').value
@@ -25,10 +14,6 @@ class Login extends Component {
         },{withCredentials: true})
         .then(Response => {
             console.log(Response.data);
-            /* var id = Response.data.id
-            var name = Response.data.name
-            document.cookie="id=" + id + ";" + "max-age=" + (24*60*60) ;
-            document.cookie="name=" + name + ";" + "max-age=" + (24*60*60);  */
             document.cookie="jwt=" + Response.data + ";" + "max-age=" + (24*60*60*1000); 
             if (Response.data == '-1') {
                 Swal.fire({
@@ -61,14 +46,8 @@ class Login extends Component {
                   )
                 
             }
-            
-            
-            
         })
-        
-        
-    
-    }
+ }
 
 
 

@@ -34,11 +34,7 @@ class SideNav extends React.Component {
                   name: 'ProfHistory',
                   css: 'fa fa-fw fa-clock',
                   key: 2
-                },
-                
-               
-              ]
-        }
+                },  ]}
     }
 
     onItemClick = (path) => {
