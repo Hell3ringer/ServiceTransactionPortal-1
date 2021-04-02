@@ -65,8 +65,7 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.3.0",
+  "devDependencies": {    
     "nodemon": "^2.0.6"
   }
 }
